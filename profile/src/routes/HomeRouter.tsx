@@ -1,11 +1,16 @@
 import React from "react"
-import {Route, Routes} from 'react-router-dom'
 import Home from "../features/Home"
+import NavBar from "../features/NavBar"
+import Competence from "../features/competence/Competence"
+import Skills from "../features/skill/Skills"
 
 
 const HomeRouter: React.FC = () => {
-  return <Routes>
-    <Route path="/*" element={<Home/>}/>
-  </Routes>
+  return <>
+    <Home />
+    <NavBar />
+    <Competence />
+    <Skills />
+  </>
 }
 export default HomeRouter

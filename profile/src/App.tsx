@@ -4,7 +4,7 @@ import Router from './routes/Router';
 
 function App() {
   return (
-    <div className="App justify-center items-center flex">
+    <div className="App justify-center items-center flex flex-col">
       <BrowserRouter>
         <Router />
       </BrowserRouter>
