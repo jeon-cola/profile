@@ -1,7 +1,7 @@
 import CompetenceBox from "./CompetenceBox"
 
 const Competence: React.FC = () => {
-  return <div>
+  return <div className="mt-20">
 
     <h1 className="font-bold text-4xl">
       <p className="text-[#51B7F2]">핵심 역량</p>
