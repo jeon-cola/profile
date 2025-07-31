@@ -3,7 +3,7 @@ import CompetenceBox from "./CompetenceBox"
 const Competence: React.FC = () => {
   return <div className="mt-20">
 
-    <h1 className="font-bold text-4xl">
+    <h1 className="font-bold text-4xl gap-2 flex flex-col">
       <p className="text-[#51B7F2]">핵심 역량</p>
       <p>끊임없이 배우고, 함께 성장하는 것을 즐깁니다</p>
     </h1>
