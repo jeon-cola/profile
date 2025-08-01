@@ -1,6 +1,8 @@
+import { useState } from "react"
 import SkillsBox, { Skill } from "../skill/SkillsBox"
+import ProjectDetail from "./ProjectDetail"
 
-interface ProjectBoxDescriptionProps {
+export interface ProjectBoxDescriptionProps {
     title: string
     award : string
     participants: string
@@ -23,7 +25,7 @@ interface ProjectBoxDescriptionProps {
     improvement: string[]
   }
 
-interface ProjectBoxProps {
+export interface ProjectBoxProps {
   title: string
   subTitle: string
   img : string
@@ -32,13 +34,17 @@ interface ProjectBoxProps {
   description: ProjectBoxDescriptionProps
 }
 
-interface ProjectWrapperProps {
+export interface ProjectWrapperProps {
   project: ProjectBoxProps
 }
 
 const ProjectBox: React.FC<ProjectWrapperProps> = ({project}) => {
+  const [isProjectOpen, setIsProjectOpen] = useState(false)
   return (
-    <div className="flex flex-col gap-2 p-3 w-[400px] mt-10 rounded-[20px] border-2 shadow-[0_4px_24px_0_rgba(0,0,0,0.35)] relative">
+    <div 
+      className="flex flex-col gap-2 p-3 w-[400px] mt-10 rounded-[20px] border-2 shadow-[0_4px_24px_0_rgba(0,0,0,0.35)] relative"
+      onClick={() => { setIsProjectOpen(!isProjectOpen) }}
+    >
         <img src={project.img} alt="project img" className="overflow-hidden rounded-[20px]" />
 
 
@@ -46,11 +52,15 @@ const ProjectBox: React.FC<ProjectWrapperProps> = ({project}) => {
 
       <div className="grid grid-cols-4 gap-3 scale-75 origin-left">
         {project.skills.map((skill) => (
-          <SkillsBox name={skill} />
+          <SkillsBox 
+            name={skill} 
+          />
         ))}
       </div>
 
       <p className="absolute bottom-2 right-2 text-sm text-[#A19F9F]">자세히 보기</p>
+
+      {isProjectOpen && <ProjectDetail project={project} isOpen={isProjectOpen} onClose={() => setIsProjectOpen(!isProjectOpen)}/>}
     </div>
   )
 
