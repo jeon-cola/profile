@@ -6,7 +6,7 @@ import Tikkeulnyang from "./Tikkeulnyang"
 
 const Project : React.FC = () => {
   return (
-    <div className="mt-32 mb-[1000px]">
+    <div className="mt-32 ">
 
       <h1 className="font-bold text-4xl flex flex-col gap-2">
         <p className="text-[#51B7F2]">프로젝트</p>

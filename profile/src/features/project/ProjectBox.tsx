@@ -42,7 +42,7 @@ const ProjectBox: React.FC<ProjectWrapperProps> = ({project}) => {
   const [isProjectOpen, setIsProjectOpen] = useState(false)
   return (
     <div 
-      className="flex flex-col gap-2 p-3 w-[400px] mt-10 rounded-[20px] border-2 shadow-[0_4px_24px_0_rgba(0,0,0,0.35)] relative"
+      className={`flex flex-col gap-2 p-3 w-[400px] mt-10 rounded-[20px] border-2 shadow-[0_4px_24px_0_rgba(0,0,0,0.35)] relative ${isProjectOpen ? 'cursor-default' : 'cursor-pointer hover:scale-[1.05] transition-all duration-300 ease-in-out'}`}
       onClick={() => { setIsProjectOpen(!isProjectOpen) }}
     >
         <img src={project.img} alt="project img" className="overflow-hidden rounded-[20px]" />

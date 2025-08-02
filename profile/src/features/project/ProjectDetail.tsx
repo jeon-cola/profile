@@ -47,7 +47,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({project, isOpen, onClose})
         className="bg-white p-6 rounded-[20px] shadow-md w-[800px] h-[650px] relative text-left flex flex-col gap-7 overflow-y-auto" 
         onClick={(e) => e.stopPropagation()}
       >
-        <img src={closeImg} alt="닫힘 버튼" onClick={onClose} className="w-[80px] absolute top-0 right-0"/>
+        <img src={closeImg} alt="닫힘 버튼" onClick={onClose} className="w-[80px] absolute top-0 right-0 cursor-pointer"/>
         
         <h1 className="text-[#51B7F2] text-4xl font-bold mb-2">{project.title}</h1>
 
@@ -141,15 +141,16 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({project, isOpen, onClose})
           ))}
         </div>
 
-        <div className="flex flex-col gap-2 cursor-pointer"
-          onClick={ () => window.open(project.link, "_blank")}>
+        <div className="flex flex-col gap-2">
             
           <div className="flex gap-2 items-center">
             <img src={GitHub} alt="githubimg" className="w-[50px] h-[50px]" />
             <p className="text-2xl font-bold">GitHub</p>
           </div>
 
-          <div className="flex border-2 rounded-[20px] p-3 gap-4">
+          <div className="flex border-2 rounded-[20px] p-3 gap-4 cursor-pointer"
+            onClick={ () => window.open(project.link, "_blank")}
+          >
             <img src="https://github.com/jeon-cola.png" alt="github img" className="w-[50px] h-[50px] rounded-full"/>
 
             <div>
