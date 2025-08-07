@@ -18,7 +18,6 @@ import Retrofit from "../../components/skills/Retrofit.png"
 import MPAndroidChart from "../../components/skills/MPAndroidChart.png"
 import PWA from "../../components/skills/PWA.png"
 import SKTTMAP from "../../components/skills/SKTTMAP.png"
-import React from 'react'
 
 export interface Skill {
   name: "JS" | "TS" | "React" | "Vue" | "Html" | "Css" | "Python" | "Django" | "Jenkins" | "Git" | "Jira" | "Redux" | "Figma" | "Tailwind" | "AndroidStudio" | "JectpackCompose" | "Retrofit" | "MPAndroidChart" | "PWA" | "SKTTMAP"  
@@ -50,8 +49,19 @@ const imageMap: Record<Skill["name"], string> = {
 
 const SkillsBox: React.FC<Skill> = ({name}) => {
   return (
-    <div className='flex justify-center items-center'>
-      <img src={imageMap[name]} alt={name} className='object-contain'  />
+    <div 
+      className='relative flex justify-center items-center group'
+    >
+      <div className='absolute bottom-full mb-1 px-2 py-1 bg-[#EAEAEA] bg-opacity-70 rounded text-[#A19F9F] text-md opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
+        {name}
+      </div>
+
+      <img 
+        src={imageMap[name]} alt={name} 
+        className='object-contain'       
+      />
+
+
     </div>
   )
 }

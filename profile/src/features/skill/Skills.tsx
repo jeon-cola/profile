@@ -9,7 +9,7 @@ const Skills: React.FC = () => {
     <div className="mt-28">
       <h1 className="text-[#51B7F2] text-4xl font-bold">기술 스택</h1>
 
-      <div className="grid grid-cols-4 gap-4 max-w-md mt-10">
+      <div className="grid grid-cols-4 gap-4 max-w-sm mt-10">
         {skillNames.map((name) => (
           <SkillsBox name={name} />
         ))}

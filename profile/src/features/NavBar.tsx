@@ -2,8 +2,21 @@ import { useState } from "react"
 import logo from "../components/logo.png"
 import logo2 from "../components/logo_2.png"
 
-const NavBar:React.FC = () => {
+interface NavBarProps {
+  current: string,
+  onScrollHome : () => void,
+  onScrollSkill : () => void,
+  onScrollProject : () => void,
+  onScrollBlog : () => void,
+}
+
+const NavBar:React.FC <NavBarProps>= ({current, onScrollHome, onScrollSkill, onScrollProject, onScrollBlog}) => {
   const [isHovered, setIsHovered] = useState(false)
+
+  const getButtonClass = (section: string) => `
+   text-3xl px-6 hover:text-[#51B7F2] transition-colors duration-300
+   ${current === section ? "text-[#51B7F2]" : "text-[#A19F9F]"}
+  `
 
   return (
     <div className="sticky top-0 z-50">
@@ -11,12 +24,22 @@ const NavBar:React.FC = () => {
         <button className="w-20 h-14"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          onClick={onScrollHome}
         >
-          <img src={isHovered ? logo :logo2} alt="logo" className="w-full h-full object-contain py-1 "/>
+          <img src={(isHovered || current === "home") ? logo :logo2} alt="logo" className="w-full h-full object-contain py-1 "/>
         </button>
-        <button className={`text-[#A19F9F] text-3xl px-6 hover:text-[#51B7F2] transition-colors duration-300`}>기술</button>
-        <button className={`text-[#A19F9F] text-3xl px-6 hover:text-[#51B7F2] transition-colors duration-300`}>프로젝트</button>
-        <button className={`text-[#A19F9F] px-6 text-3xl hover:text-[#51B7F2] transition-colors duration-300`}>블로그</button>
+        <button 
+          className={getButtonClass("skill")}
+          onClick={onScrollSkill}
+          >기술</button>
+        <button 
+          className={getButtonClass("project")}
+          onClick={onScrollProject}
+          >프로젝트</button>
+        <button 
+          className={getButtonClass("blog")}
+          onClick={onScrollBlog}
+          >블로그</button>
       </div>
     </div>
   )
