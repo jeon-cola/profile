@@ -18,16 +18,16 @@ const CompetenceBox: React.FC<CompetenceBoxProps>  = ({img, title, description})
 
   const imageSrc = imageMap[img]
   return (
-    <div className="flex flex-col items-center w-[310px] gap-2 p-3">
+    <div className="flex flex-col items-center w-[270px] gap-1 p-3">
 
       <div className="bg-[#EAEAEA] overflow-hidden w-full rounded-[20px] shadow-[0_4px_24px_0_rgba(0,0,0,0.35)]">
       <img src={imageSrc} alt="이미지" className="w-full h-full object-cover"/>
       </div>
 
-      <h1 className="font-bold text-2xl text-left w-full">{title}</h1>
+      <h1 className="font-bold text-xl text-left w-full">{title}</h1>
 
 
-      <div className="w-full text-left text-lg text-[#A19F9F]">
+      <div className="w-full text-left text-md text-[#A19F9F]">
         <p>{description}</p>
       </div>
 

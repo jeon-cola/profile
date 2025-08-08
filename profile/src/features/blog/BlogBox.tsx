@@ -9,7 +9,7 @@ const BlogBox:React.FC<BlogProps> = ({title, img, update, link}) => {
   const date = update.split(" ").slice(0,4).join(" ")
   return (
     <div
-  className="h-[380px] w-[350px] bg-center bg-cover bg-no-repeat relative cursor-pointer hover:scale-[1.04] transition-all duration-300 ease-in-out"
+  className="h-[380px] w-[350px] bg-center bg-cover bg-no-repeat relative cursor-pointer hover:scale-[1.1] transition-all duration-300 ease-in-out"
   style={{ backgroundImage: `url(${img})` }}
   onClick={() => {window.open(`${link}`, "_blank")}}
 >

@@ -16,7 +16,7 @@ const Home:React.FC = () => {
     </h1>
 
     {/*  목표 */}
-    <div className="mt-14 mb-10 text-left text-3xl text-[#D9D9D9]">
+    <div className="mt-14 mb-10 text-left text-2xl text-[#D9D9D9]">
       <p >사용자 경험의 답을 찾는</p>
       <p >프론트엔드 개발자가 되기 위해 노력하고 있습니다</p>
     </div>
