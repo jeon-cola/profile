@@ -77,7 +77,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({project, isOpen, onClose})
 
         <div className="flex flex-col">
           <p className="text-2xl font-bold">🛠️ 기술 스택</p>
-          <div className="flex w-[400px] h-[90px] origin-left">
+          <div className="grid grid-cols-4 w-[250px] h-[80px] origin-left">
             {project.skills.map((skill) => (
               <SkillsBox 
                 key={skill} 
