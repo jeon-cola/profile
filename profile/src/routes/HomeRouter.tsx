@@ -51,7 +51,7 @@ const HomeRouter: React.FC = () => {
 
   },[])
 
-  return <>
+  return <div className="w-full flex flex-col items-center">
   <div ref={scrollHome} data-section="home">
     <Home />
   </div>
@@ -73,6 +73,6 @@ const HomeRouter: React.FC = () => {
       <Blog />
     </div>
     <Contact />
-  </>
+  </ div>
 }
 export default HomeRouter

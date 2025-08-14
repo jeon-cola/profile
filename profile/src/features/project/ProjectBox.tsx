@@ -56,6 +56,7 @@ const ProjectBox: React.FC<ProjectWrapperProps> = ({project}) => {
       <div className="grid grid-cols-5 gap-2 scale-75 origin-left">
         {project.skills.map((skill) => (
           <SkillsBox 
+            key={skill}
             name={skill} 
           />
         ))}
