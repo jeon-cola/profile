@@ -13,7 +13,7 @@ const Project : React.FC = () => {
         <p>프로젝트 세부 사항을 확인해보세요</p>
       </h1>
 
-      <div className="flex flex-col lg:flex-row lg:gap-7">
+      <div className="flex flex-col items-center lg:flex-row lg:gap-7">
         <ProjectBox project={Sleephony}/>
         <ProjectBox project={Tikkeulnyang}/>
         <ProjectBox project={Carrobot}/>

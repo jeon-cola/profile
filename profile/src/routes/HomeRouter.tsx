@@ -20,14 +20,16 @@ const HomeRouter: React.FC = () => {
     const option ={
       root: null,
       rootMargin: '0px',
-      threshold: 0.6
+      threshold: 0.4
     }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute("data-section")
-          if (id) setCurrent(id)
+          if (id) {
+            setCurrent(id)
+          }
         }
       })
     },option)
