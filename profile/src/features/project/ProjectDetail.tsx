@@ -44,40 +44,40 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({project, isOpen, onClose})
     <div className="fixed bg-[#D9D9D9] bg-opacity-50 z-50 inset-0 flex flex-col items-center justify-center">
 
       <div 
-        className="bg-white p-6 rounded-[20px] shadow-md w-[800px] h-[650px] relative text-left flex flex-col gap-7 overflow-y-auto" 
+        className="bg-white py-3 px-6 lg:p-6 rounded-[20px] shadow-md w-[340px] h-[600px] lg:w-[800px] lg:h-[650px] relative text-left flex flex-col gap-7 overflow-y-auto" 
         onClick={(e) => e.stopPropagation()}
       >
-        <img src={closeImg} alt="닫힘 버튼" onClick={onClose} className="w-[80px] absolute top-0 right-0 cursor-pointer"/>
+        <img src={closeImg} alt="닫힘 버튼" onClick={onClose} className="w-[40px] lg:w-[80px] absolute top-2 right-2  lg:top-0 lg:right-0 cursor-pointer"/>
         
-        <h1 className="text-[#51B7F2] text-4xl font-bold mb-2">{project.title}</h1>
+        <h1 className="text-[#51B7F2] text-3xl lg:text-4xl font-bold mb-2">{project.title}</h1>
 
         <div className="flex flex-col gap-2">
-          <p className="text-2xl font-bold">🚀 프로젝트 소개</p>
-          <p className="text-xl text-[#A19F9F] ">{project.subTitle}</p>
+          <p className="text-xl lg:text-2xl font-bold">🚀 프로젝트 소개</p>
+          <p className="text-lg lg:text-xl text-[#A19F9F] ">{project.subTitle}</p>
         </div>
 
         {(project.description.award.length > 1) &&
           <div className="flex flex-col gap-2">
-            <p className="text-2xl font-bold">🏆 수상 내역</p>
-            <p className="text-xl text-[#A19F9F] ">{project.description.award}</p>
+            <p className="text-xl lg:text-2xl font-bold">🏆 수상 내역</p>
+            <p className="text-lg lg:text-xl text-[#A19F9F] ">{project.description.award}</p>
           </div>
         }
 
-        <div className="flex flex-between gap-5">
+        <div className="flex flex-col lg:flex-row flex-between gap-5">
           <div className="flex flex-col gap-2">
-            <p className="text-2xl font-bold">📅  시기</p>
-            <p className="text-xl text-[#A19F9F] ">{project.description.term}</p>
+            <p className="text-xl lg:text-2xl font-bold">📅  시기</p>
+            <p className="text-lg lg:text-xl text-[#A19F9F] ">{project.description.term}</p>
           </div>
 
           <div className="flex flex-col gap-2">
-            <p className="text-2xl font-bold">👨‍💻  참여인원</p>
-            <p className="text-xl text-[#A19F9F] ">{project.description.participants}</p>
+            <p className="text-xl lg:text-2xl font-bold">👨‍💻  참여인원</p>
+            <p className="text-lg lg:text-xl text-[#A19F9F] ">{project.description.participants}</p>
           </div>
         </div>
 
         <div className="flex flex-col">
-          <p className="text-2xl font-bold">🛠️ 기술 스택</p>
-          <div className="grid grid-cols-4 w-[250px] h-[80px] origin-left">
+          <p className="text-xl lg:text-2xl font-bold">🛠️ 기술 스택</p>
+          <div className="grid grid-cols-4 w-[200px] h-[70px] lg:w-[250px] lg:h-[80px] origin-left">
             {project.skills.map((skill) => (
               <SkillsBox 
                 key={skill} 
@@ -88,9 +88,9 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({project, isOpen, onClose})
         </div>
 
         <div className="flex flex-col gap-2">
-          <p className="text-2xl font-bold">⚡ 담당 기능</p>
+          <p className="text-xl lg:text-2xlfont-bold">⚡ 담당 기능</p>
           {Object.entries(project.description.function).map(([key, value]) => (
-            <div className="text-xl text-[#A19F9F] ml-3">
+            <div className="text-lg lg:text-xl text-[#A19F9F] ml-3">
               {value.title}
               {value.description.length > 1 && (
                 value.description.map((text) => (
@@ -104,29 +104,29 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({project, isOpen, onClose})
 
         
         <div className="flex flex-col gap-2">
-          <p className="text-2xl font-bold">🔧  문제 해결 경험</p>
+          <p className="text-xl lg:text-2xl font-bold">🔧  문제 해결 경험</p>
           {Object.entries(project.description.trouble).map(([keyboard, value]) => (
             <div className="flex flex-col gap-2">
-              <p className="text-2xl font-bold">{value.title}</p>
+              <p className="text-xl lg:text-2xl font-bold">{value.title}</p>
 
               <div className="ml-5 flex flex-col gap-2">
                 
-                <p className="text-xl font-bold">📍 문제 상황</p>
-                <p className="text-xl text-[#A19F9F]">{value.situation}</p>
+                <p className="text-lg lg:text-xl font-bold">📍 문제 상황</p>
+                <p className="text-lg lg:text-xl text-[#A19F9F]">{value.situation}</p>
 
-                <p className="text-xl font-bold">🔍 원인 분석</p>
+                <p className="text-lg lg:text-xl font-bold">🔍 원인 분석</p>
                 {value.cause.map((text) => (
-                  <p className="text-xl text-[#A19F9F]">{text}</p>
+                  <p className="text-lg lg:text-xl text-[#A19F9F]">{text}</p>
                 ))}
 
-                <p className="text-xl font-bold">💡 해결 방안</p>
+                <p className="text-lg lg:text-xl font-bold">💡 해결 방안</p>
                 {value.slove.map((text) => (
-                  <p className="text-xl text-[#A19F9F]">{text}</p>
+                  <p className="text-lg lg:text-xl text-[#A19F9F]">{text}</p>
                 ))}
 
-                <p className="text-xl font-bold">✅ 결과</p>
+                <p className="text-lg lg:text-xl font-bold">✅ 결과</p>
                 {value.result.map((text) => (
-                  <p className="text-xl text-[#A19F9F]">{text}</p>
+                  <p className="text-lg lg:text-xl text-[#A19F9F]">{text}</p>
                 ))}
 
               </div>
@@ -135,9 +135,9 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({project, isOpen, onClose})
         </div>
         
         <div className="flex flex-col gap-2">
-          <p className="text-2xl font-bold">🎨  UX/UI 개선</p>
+          <p className="text-xl lg:text-2xl font-bold">🎨  UX/UI 개선</p>
           {project.description.improvement.map((text) => (
-            <p className="text-xl text-[#A19F9F] ml-3">{text}</p>
+            <p className="text-lg lg:text-xl text-[#A19F9F] ml-3">{text}</p>
           ))}
         </div>
 
@@ -145,17 +145,17 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({project, isOpen, onClose})
             
           <div className="flex gap-2 items-center">
             <img src={GitHub} alt="githubimg" className="w-[50px] h-[50px]" />
-            <p className="text-2xl font-bold">GitHub</p>
+            <p className="text-xl lg:text-2xl font-bold">GitHub</p>
           </div>
 
-          <div className="flex border-2 rounded-[20px] p-3 gap-4 cursor-pointer"
+          <div className="flex border-2 rounded-[20px] p-3 gap-4 cursor-pointer flex items-center"
             onClick={ () => window.open(project.link, "_blank")}
           >
-            <img src="https://github.com/jeon-cola.png" alt="github img" className="w-[50px] h-[50px] rounded-full"/>
+            <img src="https://github.com/jeon-cola.png" alt="github img" className="w-[65px] h-[65px] lg:w-[50px] lg:h-[50px] rounded-full"/>
 
             <div>
-              <p className="text-lg font-bold">{project.title}</p>
-              <div className="flex gap-2">
+              <p className="text-md lg:text-lg font-bold">{project.title}</p>
+              <div className="flex flex-col lg:flex-row lg:gap-2">
                 <p className="text-[#A19F9F]">마지막 업데이트</p>
                 <p className="text-[#A19F9F]">{git}</p>
               </div>

@@ -15,18 +15,19 @@ const NavBar:React.FC <NavBarProps>= ({current, onScrollHome, onScrollSkill, onS
 
   const getButtonClass = (section: string) => `
   text-xl lg:text-3xl  px-3 lg:px-6 hover:text-[#51B7F2] transition-colors duration-300
-   ${current === section ? "text-[#51B7F2]" : "text-[#A19F9F]"}
+  ${current === section ? "text-[#51B7F2]" : "text-[#A19F9F]"}
+  whitespace-nowrap
   `
 
   return (
     <div className="sticky top-0 z-50">
       <div className="w-[350px] h-[50px]  lg:w-[600px] lg:h-[65px] bg-[#EAEAEA] opacity-95 rounded-[50px] flex justify-center items-center shadow-[0_4px_24px_0_rgba(0,0,0,0.35)] my-5">
-        <button className="w-15 h-10 lg:w-20 lg:h-14"
+        <button className="w-[44px] h-[40px] lg:w-20 lg:h-14"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onClick={onScrollHome}
         >
-          <img src={(isHovered || current === "home") ? logo :logo2} alt="logo" className="w-full h-full object-contain py-1 "/>
+          <img src={(isHovered || current === "home") ? logo :logo2} alt="logo" className="w-full h-full object-contain py-2 "/>
         </button>
         <button 
           className={getButtonClass("skill")}
