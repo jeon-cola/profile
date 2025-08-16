@@ -1,4 +1,7 @@
 const Contact: React.FC = () => {
+  const handlerGitHub = () => { 
+    window.open("https://github.com/jeon-cola")
+  }
   return (
     <div className="mt-32 flex flex-col gap-4 mb-32">
 
@@ -11,7 +14,10 @@ const Contact: React.FC = () => {
 
       <div className="flex gap-4 justify-between">
         <p className="text-xl lg:text-2xl font-bold">GitHub</p>
-        <p className="text-xl lg:text-2xl font-bold text-[#A19F9F]">jeon-cola</p>
+        <p 
+          className="text-xl lg:text-2xl font-bold text-[#A19F9F] cursor-pointer hover:text-[#51B7F2]"
+          onClick={handlerGitHub}
+        >jeon-cola</p>
       </div>
     </div>
   )
