@@ -3,8 +3,8 @@ import downloadIcon from "../components/download.png"
 const DownLoad : React.FC = () => {
   const handleDownLoad = () => {
     const link = document.createElement('a')
-    link.href = "/jeonhongsoek_portfolio.pdf"
-    link.download = "/jeonhongsoek_portfolio.pdf"
+    link.href = `${process.env.PUBLIC_URL}/jeonhongsoek_portfolio.pdf`
+    link.download = "jeonhongsoek_portfolio.pdf"
     link.click()
   }
 
