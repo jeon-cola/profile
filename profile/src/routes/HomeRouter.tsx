@@ -6,6 +6,7 @@ import Skills from "../features/skill/Skills"
 import Project from "../features/project/Project"
 import Blog from "../features/blog/Blog"
 import Contact from "../features/Contact"
+import DownLoad from "../features/DownLoad"
 
 
 const HomeRouter: React.FC = () => {
@@ -75,6 +76,7 @@ const HomeRouter: React.FC = () => {
       <Blog />
     </div>
     <Contact />
+    <DownLoad />
   </ div>
 }
 export default HomeRouter
