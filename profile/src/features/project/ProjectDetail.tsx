@@ -4,6 +4,7 @@ import closeImg from "../../components/close.png"
 import { useEffect, useState } from "react"
 import GitHub from "../../components/skills/GitHub.png"
 import axios from "axios"
+import { createPortal } from "react-dom"
 
 interface ProjectDetailProps extends ProjectWrapperProps {
   isOpen: boolean
@@ -40,7 +41,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({project, isOpen, onClose})
   
   if (!isOpen) return null
 
-  return (
+  return createPortal(
     <div className="fixed bg-[#D9D9D9] bg-opacity-50 z-50 inset-0 flex flex-col items-center justify-center">
 
       <div 
@@ -164,7 +165,8 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({project, isOpen, onClose})
         </div>
 
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
 
