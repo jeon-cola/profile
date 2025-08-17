@@ -65,6 +65,7 @@ const HomeRouter: React.FC = () => {
   },[])
 
   return <div className="w-full flex flex-col items-center px-3">
+    
   <div ref={scrollHome} data-section="home">
     <Home />
   </div>
