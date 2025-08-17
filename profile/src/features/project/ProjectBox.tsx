@@ -56,6 +56,7 @@ const ProjectBox: React.FC<ProjectWrapperProps> = ({project}) => {
         autoPlay
         loop
         muted
+        playsInline
         />
       </div>
 

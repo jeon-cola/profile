@@ -18,6 +18,7 @@ import Retrofit from "../../components/skills/Retrofit.png"
 import MPAndroidChart from "../../components/skills/MPAndroidChart.png"
 import PWA from "../../components/skills/PWA.png"
 import SKTTMAP from "../../components/skills/SKTTMAP.png"
+ 
 
 export interface Skill {
   name: "JS" | "TS" | "React" | "Vue" | "Html" | "Css" | "Python" | "Django" | "Jenkins" | "Git" | "Jira" | "Redux" | "Figma" | "Tailwind" | "AndroidStudio" | "JectpackCompose" | "Retrofit" | "MPAndroidChart" | "PWA" | "SKTTMAP"  

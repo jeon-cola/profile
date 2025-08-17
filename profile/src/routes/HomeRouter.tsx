@@ -8,6 +8,8 @@ import Blog from "../features/blog/Blog"
 import Contact from "../features/Contact"
 import DownLoad from "../features/DownLoad"
 
+import {motion} from "framer-motion"
+
 
 const HomeRouter: React.FC = () => {
   const scrollHome = useRef<HTMLDivElement>(null)
@@ -16,6 +18,13 @@ const HomeRouter: React.FC = () => {
   const scrollBlog = useRef<HTMLDivElement>(null)
 
   const [current, setCurrent] = useState<string>('home')
+
+  const setttings = [
+    { id : "Competence", ref : "", component:Competence },
+    { id : "skill", ref : scrollSkill, component:Skills },
+    { id : "project", ref : scrollProject, component:Project },
+    { id : "blog", ref : scrollBlog, component:Blog },
+  ]
 
   useEffect(() => {
     const option ={
@@ -28,6 +37,7 @@ const HomeRouter: React.FC = () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute("data-section")
+          console.log(id)
           if (id) {
             setCurrent(id)
           }
@@ -65,16 +75,19 @@ const HomeRouter: React.FC = () => {
       onScrollProject =  {() => scrollProject.current?.scrollIntoView({behavior: "smooth"})}
       onScrollBlog =  {() => scrollBlog.current?.scrollIntoView({behavior: "smooth"})}
     />
-    <Competence />
-    <div ref={scrollSkill} data-section="skill">
-      <Skills />
-    </div>
-    <div ref={scrollProject} data-section="project">
-      <Project />
-    </div>
-    <div ref={scrollBlog} data-section="blog">
-      <Blog />
-    </div>
+    {setttings.map(({id, ref, component:Component}) => (
+      <motion.div 
+        key={id}
+        ref={ref as React.RefObject<HTMLDivElement>}
+        data-section={id}
+        initial={{ opacity: 0, y: 70 }} 
+        whileInView={{ opacity: 1, y: 50 }} 
+        transition={{ duration: 1.5, ease: "easeOut" }} 
+        viewport={{ once: true,  amount: 0.4 }}
+      >
+        <Component />
+      </motion.div>
+    ))}
     <Contact />
     <DownLoad />
   </ div>
