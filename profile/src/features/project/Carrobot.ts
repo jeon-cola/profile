@@ -4,6 +4,7 @@ const Carrobot = {
   title: "CarroBot",
   subTitle: "AI 개인 운반 로봇",
   img : CarroBotImg,
+  video : "/carrobot.mp4",
   link: "https://github.com/jeon-cola/CarroBot",
   skills: ["AndroidStudio", "JectpackCompose", "Retrofit", "SKTTMAP"] as const,
   description: {

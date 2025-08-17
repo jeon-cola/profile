@@ -4,6 +4,7 @@ const Tikkeulnyang = {
   title: "Tikkeulnyang",
   subTitle: "소비내역 기반 챌린지 생성을 통한 소비 습관 개선 웹 사이트",
   img : TikkeulnyangImg,
+  video : "/tikkeulnyang.mp4",
   link: "https://github.com/jeon-cola/tikkeulnyang",
   skills: ["React", "Tailwind", "Redux", "PWA"] as const,
   description: {

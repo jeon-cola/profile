@@ -29,6 +29,7 @@ export interface ProjectBoxProps {
   title: string
   subTitle: string
   img : string
+  video : string
   link: string
   skills: readonly Skill['name'][],
   description: ProjectBoxDescriptionProps
@@ -40,13 +41,23 @@ export interface ProjectWrapperProps {
 
 const ProjectBox: React.FC<ProjectWrapperProps> = ({project}) => {
   const [isProjectOpen, setIsProjectOpen] = useState(false)
+
   return (
     <div 
       className={`flex flex-col p-3 w-[360px] mt-10 gap-1 relative ${isProjectOpen ? 'cursor-default' : 'cursor-pointer hover:scale-[1.05] lg:hover:scale-[1.15] transition-all duration-300 ease-in-out'}`}
       onClick={() => { setIsProjectOpen(!isProjectOpen) }}
     >
-        <img src={project.img} alt="project img" className="overflow-hidden rounded-[20px] shadow-[0_4px_24px_0_rgba(0,0,0,0.35)] " />
-
+      <div className="group">
+        <img src={project.img} alt="project img" className="overflow-hidden rounded-[20px] shadow-[0_4px_24px_0_rgba(0,0,0,0.35)] group-hover:hidden" />
+        
+        <video 
+        src={`/profile/${project.video}`}
+        className="overflow-hidden rounded-[20px] shadow-[0_4px_24px_0_rgba(0,0,0,0.35)] hidden group-hover:block"
+        autoPlay
+        loop
+        muted
+        />
+      </div>
 
       <div>
         <p className="text-2xl font-bold text-left">{project.title}</p>

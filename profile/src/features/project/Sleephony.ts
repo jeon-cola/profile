@@ -4,6 +4,7 @@ const Sleephony = {
   title: "Sleephony",
   subTitle: "생체 데이터 기반  AI 수면 단계 분석 및 음향 제공 프로젝트",
   img : SleephonyImg,
+  video : "/sleephony.mp4",
   link: "https://github.com/jeon-cola/Sleephony",
   skills: ["AndroidStudio", "JectpackCompose", "Retrofit", "MPAndroidChart"] as const,
   description: {
